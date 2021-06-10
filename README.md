@@ -1,7 +1,5 @@
 Projektmitglieder:
 
-- Tuce Yemisen (s0575696)
-
 - Sascha Huhne (s0573449)
 
 
@@ -10,26 +8,26 @@ Projektmitglieder:
 
 ### Repository:
 
-https://github.com/TuceYem/satu_webtech
+https://github.com/shuhne/coinwallet
 
 ## Projektname:
 
-satu_flashcards
+SimpleDemoCoinwallet
 
 ### Projektbeschreibung:
 
-Intelligentes, webbasiertes Karteikartenmanagementsystem
+Benutzerfreundliches, webbasiertes Cryptocoinwallet 
+(Demo, keine Aufbewahrung von echten Keys)
 
 ###### Funktionen / Inhalte:
 
 - Einloggen mit Username & Kennwort
 
-- Anlegen, Verändern und Löschen von persönlichen Karteikartenstapeln -> in DB gespeichert
+- Anzeigen des persönlichen Kontostands in Cryptocurrency -> in DB gespeichert
 
-- Lernmodus: (Random-) Abfrage von Karteikarten innerhalb eines Stapels
+- Anzeige des Realtime-Wechselkurses in Leitwährung USD od. EUR -> per externer REST-API
 
-- ggf. weitere Funktionserweiterung wie bspw. 
-    Feedback im Lernmodus -> Stapel werden ja nach Feedback für 
-    den nächsten Lernmodus sortiert und kategorisiert, damit Karten die man noch nicht auswendig kann häufiger abgefragt werden
+- ggf. weitere Funktionen wie:
+    - Transferieren von Coinanteilen auf  Wallets von anderen Usern
 
 
