@@ -18,7 +18,7 @@ public class CoinwalletService {
         return this.coinwalletRepository.findAll();
     }
 
-    public Coinwallet getCoinwalletById(Long id){
+    public Coinwallet getCoinwalletById(int id){
         return this.coinwalletRepository.findById(id).orElse(null);
     }
 
@@ -30,7 +30,7 @@ public class CoinwalletService {
         return this.coinwalletRepository.saveAll(coinwallets);
     }
 
-    public String deleteCoinwalletById(Long id){
+    public String deleteCoinwalletById(int id){
         this.coinwalletRepository.deleteById(id);
         return "coinwallet removed";
     }

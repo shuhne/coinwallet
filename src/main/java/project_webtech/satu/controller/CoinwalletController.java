@@ -22,29 +22,31 @@ public class CoinwalletController {
 
     @GetMapping("coinwallet/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Coinwallet getCoinwalletById(@PathVariable Long id){
+    public Coinwallet getCoinwalletById(@PathVariable int id){
         return this.coinwalletService.getCoinwalletById(id);
     }
 
-    @PostMapping("/flashcards/save")
+    @PostMapping("/coinwallet/save")
     @ResponseStatus(HttpStatus.OK)
     public Coinwallet saveCoinwallet(@RequestBody Coinwallet coinwallet){
         return this.coinwalletService.saveCoinwallet(coinwallet);
     }
 
-    @PostMapping("/flashcards/save/all")
+    @PostMapping("/coinwallet/save/all")
     @ResponseStatus(HttpStatus.OK)
+
     public List<Coinwallet> saveAllCoinwallets(@RequestBody List<Coinwallet> coinwallets){
         return this.coinwalletService.saveAllCoinwallets(coinwallets);
     }
 
-    @DeleteMapping("/flashcards/delete/{id}")
+    @DeleteMapping("/coinwallet/delete/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public String deleteCoinwalletById(@PathVariable Long id){
+    // ggf. sichern (nicht public)
+    public String deleteCoinwalletById(@PathVariable int id){
         return this.coinwalletService.deleteCoinwalletById(id);
     }
 
-    @PutMapping("/flashcards/update/{id}")
+    @PutMapping("/coinwallet/update/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Coinwallet updateCoinwallet(@RequestBody Coinwallet coinwallet){
         return this.coinwalletService.updateCoinwallet(coinwallet);

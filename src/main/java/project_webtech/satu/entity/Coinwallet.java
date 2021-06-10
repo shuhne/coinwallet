@@ -6,13 +6,13 @@ package project_webtech.satu.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="flashcards")
+@Table(name="coinwallets")
 public class Coinwallet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
-    private Long id;
+    private int id;
     @Column(name="coincurrency", nullable = false)
     private String coincurrency;
     @Column(name="coinvalue", nullable = false)
@@ -25,11 +25,11 @@ public class Coinwallet {
         this.coinvalue = coinvalue;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
