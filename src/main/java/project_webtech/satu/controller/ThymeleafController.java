@@ -13,4 +13,10 @@ public class ThymeleafController {
     public ModelAndView showIndexPage(){
         return new ModelAndView(viewNames.INDEX);
     }
+
+    @GetMapping(path =endpoints.CREATE)
+    public ModelAndView showCreatePage(){ return new ModelAndView(viewNames.CREATE);}
+
+    @GetMapping(path =endpoints.VIEW)
+    public ModelAndView showViewPage(){ return new ModelAndView(viewNames.VIEW);}
 }

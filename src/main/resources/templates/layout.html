@@ -1,27 +1,23 @@
 <!DOCTYPE html>
-<html th:fragment="layout (template)" lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html th:fragment="navbar" lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-<body>
+<body style="background-color: coral">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">FlashOfThought</a>
+        <a class="navbar-brand" href="#">SimpleDemoCoinwallet</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Study</a>
+                    <a class="nav-link" th:href="@{/create}" th:classappend="${#request.requestURI == '/create' ? 'active':''}">Create a new Wallet</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Add Flashcard</a>
+                    <a class="nav-link" th:href="@{/view}" th:classappend="${#request.requestURI == '/view' ? 'active':''}">View Wallets</a>
                 </li>
             </ul>
             <form class="d-flex">
@@ -33,6 +29,12 @@
         </div>
     </div>
 </nav>
+<p></p>
+<p></p>
 
+<div style="text-align: center">
+    <h2>Welcome to SimpleDemoCoinwallet</h2>
+
+</div>
 </body>
 </html>

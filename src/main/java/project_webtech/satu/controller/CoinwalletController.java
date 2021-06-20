@@ -14,7 +14,7 @@ public class CoinwalletController {
     @Autowired
     private CoinwalletService coinwalletService;
 
-    @GetMapping("/coinwallet")
+    @GetMapping("/getcoinwallet")
     @ResponseStatus(HttpStatus.OK)
     public List<Coinwallet> getAllCoinwallets(){
         return this.coinwalletService.getAllCoinwallets();
@@ -26,17 +26,17 @@ public class CoinwalletController {
         return this.coinwalletService.getCoinwalletById(id);
     }
 
-    @PostMapping("/coinwallet/save")
+    @PostMapping("/savecoinwallet")
     @ResponseStatus(HttpStatus.OK)
     public Coinwallet saveCoinwallet(@RequestBody Coinwallet coinwallet){
         return this.coinwalletService.saveCoinwallet(coinwallet);
     }
 
-    @PostMapping("/coinwallet/save/all")
+    @PostMapping("/saveAllCoinWallets")
     @ResponseStatus(HttpStatus.OK)
 
-    public List<Coinwallet> saveAllCoinwallets(@RequestBody List<Coinwallet> coinwallets){
-        return this.coinwalletService.saveAllCoinwallets(coinwallets);
+    public List<Coinwallet> saveAllCoinwallets(@RequestBody List<Coinwallet> coinwallet){
+        return this.coinwalletService.saveAllCoinwallets(coinwallet);
     }
 
     @DeleteMapping("/coinwallet/delete/{id}")

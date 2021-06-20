@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+
+    <title>Create</title>
+    <meta charset="UTF-8">
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type ="module" src="#" th:src="@{/javascript/wallet.js}" defer></script>
+</head>
+<body>
+<div th:replace="~{layout ::navbar}" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+<h2>Create a new wallet</h2>
+<div id="createwallet">
+    <createwallet></createwallet>
+</div>
+</body>
+</html>
