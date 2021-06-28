@@ -1,7 +1,10 @@
-CREATE TABLE if not exist coinwallets
+create table if not exists coinwallets
 (
-    id integer NOT NULL,
-    coincurrency character varying(255) NOT NULL,
-    coinvalue character varying(255) NOT NULL,
-    CONSTRAINT coinwallets_pk PRIMARY KEY (id)
-)
+    id bigserial not null
+        constraint coinwallets_pk
+            primary key,
+    coincurrency varchar(5) not null,
+    coinvalue varchar(255) not null,
+    owner varchar(255) not null
+);
+

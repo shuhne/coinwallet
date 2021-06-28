@@ -2,7 +2,10 @@ package project_webtech.satu.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import project_webtech.satu.Service.CoinwalletService;
 import project_webtech.satu.entity.Coinwallet;
 
@@ -16,39 +19,24 @@ public class CoinwalletController {
 
     @GetMapping("/getcoinwallet")
     @ResponseStatus(HttpStatus.OK)
-    public List<Coinwallet> getAllCoinwallets(){
-        return this.coinwalletService.getAllCoinwallets();
+    public List<Coinwallet> getAllCoinwallets(@AuthenticationPrincipal OidcUser user){
+        return this.coinwalletService.findAll(user.getEmail());
     }
 
-    @GetMapping("coinwallet/{id}")
+
+    @PostMapping("/createcoinwallet")
     @ResponseStatus(HttpStatus.OK)
-    public Coinwallet getCoinwalletById(@PathVariable int id){
-        return this.coinwalletService.getCoinwalletById(id);
+    public String createCoinwallet(@AuthenticationPrincipal OidcUser user, @RequestBody Coinwallet coinwallet){
+        coinwallet.setOwner(user.getEmail());
+       coinwalletService.save(coinwallet);
+        return "coinwallet created";
     }
 
-    @PostMapping("/savecoinwallet")
-    @ResponseStatus(HttpStatus.OK)
-    public Coinwallet saveCoinwallet(@RequestBody Coinwallet coinwallet){
-        return this.coinwalletService.saveCoinwallet(coinwallet);
-    }
 
-    @PostMapping("/saveAllCoinWallets")
-    @ResponseStatus(HttpStatus.OK)
-
-    public List<Coinwallet> saveAllCoinwallets(@RequestBody List<Coinwallet> coinwallet){
-        return this.coinwalletService.saveAllCoinwallets(coinwallet);
-    }
-
-    @DeleteMapping("/coinwallet/delete/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    // ggf. sichern (nicht public)
-    public String deleteCoinwalletById(@PathVariable int id){
-        return this.coinwalletService.deleteCoinwalletById(id);
-    }
 
     @PutMapping("/coinwallet/update/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Coinwallet updateCoinwallet(@RequestBody Coinwallet coinwallet){
+    public Coinwallet updateCoinwallet(@AuthenticationPrincipal OidcUser user, @RequestBody Coinwallet coinwallet){
         return this.coinwalletService.updateCoinwallet(coinwallet);
     }
 }

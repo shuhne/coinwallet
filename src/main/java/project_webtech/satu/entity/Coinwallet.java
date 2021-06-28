@@ -11,12 +11,14 @@ public class Coinwallet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", unique = true, nullable = false)
-    private int id;
-    @Column(name="coincurrency", nullable = false)
+    @Column(name = "id")
+    private long id;
+    @Column(name="coincurrency")
     private String coincurrency;
-    @Column(name="coinvalue", nullable = false)
+    @Column(name="coinvalue")
     private String coinvalue;
+    @Column(name="owner")
+    private String owner;
 
     public Coinwallet() {}
 
@@ -25,11 +27,11 @@ public class Coinwallet {
         this.coinvalue = coinvalue;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -47,6 +49,14 @@ public class Coinwallet {
 
     public void setCoinvalue(String coinvalue) {
         this.coinvalue = coinvalue;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     @Override
