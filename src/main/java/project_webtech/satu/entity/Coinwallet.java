@@ -4,6 +4,7 @@ package project_webtech.satu.entity;
 
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name="coinwallets")
@@ -13,18 +14,29 @@ public class Coinwallet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-    @Column(name="coincurrency")
-    private String coincurrency;
-    @Column(name="coinvalue")
-    private String coinvalue;
-    @Column(name="owner")
+
+    @Column(name = "coincurrency")
+    @Enumerated(value = EnumType.STRING)
+    private Currency coincurrency;
+
+    @Column(name = "coinvalue")
+    private BigDecimal coinvalue;
+
+    @Column(name = "owner")
     private String owner;
 
-    public Coinwallet() {}
+    @Column(name = "price")
+    private BigDecimal price;
 
-    public Coinwallet(String coincurrency, String coinvalue) {
+    public Coinwallet() {
+    }
+
+    public Coinwallet(long id, Currency coincurrency, BigDecimal coinvalue, String owner, BigDecimal price) {
+        this.id = id;
         this.coincurrency = coincurrency;
         this.coinvalue = coinvalue;
+        this.owner = owner;
+        this.price = price;
     }
 
     public long getId() {
@@ -35,19 +47,19 @@ public class Coinwallet {
         this.id = id;
     }
 
-    public String getCoincurrency() {
+    public Currency getCoincurrency() {
         return coincurrency;
     }
 
-    public void setCoincurrency(String coincurrency) {
+    public void setCoincurrency(Currency coincurrency) {
         this.coincurrency = coincurrency;
     }
 
-    public String getCoinvalue() {
+    public BigDecimal getCoinvalue() {
         return coinvalue;
     }
 
-    public void setCoinvalue(String coinvalue) {
+    public void setCoinvalue(BigDecimal coinvalue) {
         this.coinvalue = coinvalue;
     }
 
@@ -59,12 +71,24 @@ public class Coinwallet {
         this.owner = owner;
     }
 
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "Coinwallet{" +
                 "id=" + id +
-                ", coincurrency='" + coincurrency + '\'' +
-                ", coinvalue='" + coinvalue + '\'' +
+                ", coincurrency=" + coincurrency +
+                ", coinvalue=" + coinvalue +
+                ", owner='" + owner + '\'' +
+                ", price=" + price +
                 '}';
     }
 }
+
+

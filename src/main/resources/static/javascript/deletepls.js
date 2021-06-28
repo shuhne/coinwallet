@@ -11,11 +11,12 @@ app.component("createwallet",{
     
     <div>
     <p></p>
-    <p></p>
+<p></p>
     <h4>Overview about your wallets</h4>
     <table class="table table-striped">
     <thead>
     <tr>
+        
         <th scope="col">Currency</th>
         <th scope="col">Value</th>
     </tr>
@@ -26,14 +27,15 @@ app.component("createwallet",{
         <td colspan="2">You have no wallets yet.</td>
     </tr>
     <tr v-for="coinwallet in items">
-        <td>{{coinwallet.coincurrency}}</td>
-        <td>{{coinwallet.coinvalue}}</td>
+  
+    <td>{{coinwallet.coincurrency}}</td>
+    <td>{{coinwallet.coinvalue}}</td>
     </tr>
     <tr>
-        <td>{{ currencyField }}</td>
-        <td>{{ valueField }}</td>
-    </tr>
     
+    <td>{{ currencyField }}</td>
+    <td>{{ valueField }}</td>
+    </tr>
     </tbody>
     </table>
    </div>

@@ -26,17 +26,14 @@ public class CoinwalletController {
 
     @PostMapping("/createcoinwallet")
     @ResponseStatus(HttpStatus.OK)
-    public String createCoinwallet(@AuthenticationPrincipal OidcUser user, @RequestBody Coinwallet coinwallet){
+    public Coinwallet createCoinwallet(@AuthenticationPrincipal OidcUser user, @RequestBody Coinwallet coinwallet){
         coinwallet.setOwner(user.getEmail());
-       coinwalletService.save(coinwallet);
-        return "coinwallet created";
+        return this.coinwalletService.save(coinwallet);
     }
 
-
-
-    @PutMapping("/coinwallet/update/{id}")
+    @PutMapping("/updateexchange/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Coinwallet updateCoinwallet(@AuthenticationPrincipal OidcUser user, @RequestBody Coinwallet coinwallet){
+    public Coinwallet updateExchangeRate(@AuthenticationPrincipal OidcUser user, @RequestBody Coinwallet coinwallet){
         return this.coinwalletService.updateCoinwallet(coinwallet);
     }
 }
