@@ -2,9 +2,7 @@ const app = Vue.createApp({});
 
 app.component("viewwallet",{
     template:`
-
-    <p></p>
-<p></p>
+    <div  class="mx-auto">
     <h4>Check the latest exchange rates right here</h4>
     <table class="table table-striped">
     <thead>
@@ -25,9 +23,8 @@ app.component("viewwallet",{
     <td>{{coinwallet.coinvalue}}</td>
     <td>{{coinwallet.price}}</td
     <td style="vertical-align: middle">
-    <button type="button" class="btn btn-danger btn-sm" style="margin-right:1%" v-on:click="refreshExchange(coinwallet)"> Refresh Exchange Rate
-    </button>
-                            </td>
+        <button type="button" class="btn btn-info" v-on:click="refreshExchange(coinwallet)"> Refresh Exchange Rate</button>
+    </td>
     </tr>
     <tr>
     

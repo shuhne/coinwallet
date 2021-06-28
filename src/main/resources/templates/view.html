@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-
     <title>View</title>
     <meta charset="UTF-8">
     <!-- Vue, Axios, Babel and JS reference -->
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="module" src="#" th:src="@{/javascript/viewwallets.js}" defer></script>
-     <!-- <script type="module" src="#" th:src="@{/javascript/main.js}" defer></script>-->
+    <script src="#" th:src="@{/javascript/viewwallets.js}" defer></script>
     <!-- CSS styling -->
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
-<body>
-<div th:replace="~{layout ::navbar}" xmlns:th="http://www.w3.org/1999/xhtml"></div>
-<h4>Test1234</h4>
-<p></p>
-<div id="viewwallet">
-    <viewwallet></viewwallet>
-</div>
+
+<body class="background">
+    <div th:replace="~{layout ::navbar}" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+    <div class ="area" id="viewwallet">
+        <viewwallet></viewwallet>
+    </div>
 
 </body>
 </html>
