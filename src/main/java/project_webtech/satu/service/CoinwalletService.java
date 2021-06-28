@@ -1,7 +1,6 @@
-package project_webtech.satu.Service;
+package project_webtech.satu.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -12,8 +11,6 @@ import project_webtech.satu.api.ExtAPIResponse;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-
 
 
 @Service

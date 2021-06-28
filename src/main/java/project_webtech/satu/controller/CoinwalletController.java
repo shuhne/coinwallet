@@ -2,11 +2,10 @@ package project_webtech.satu.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
-import project_webtech.satu.Service.CoinwalletService;
+import project_webtech.satu.service.CoinwalletService;
 import project_webtech.satu.entity.Coinwallet;
 
 import java.util.List;
